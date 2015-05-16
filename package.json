@@ -11,6 +11,6 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "9e-sass-lint": "^0.0.10"
+    "9e-sass-lint": "^0.0.11"
   }
 }
