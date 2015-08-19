@@ -1,7 +1,6 @@
 {
   "name": "linter-9e-sass",
   "main": "./lib/init",
-  "linter-package": true,
   "activationCommands": [],
   "version": "0.4.0",
   "description": "Linter plugin for 9e-sass-lint",
@@ -12,5 +11,12 @@
   },
   "dependencies": {
     "9e-sass-lint": "^0.0.12"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
   }
 }

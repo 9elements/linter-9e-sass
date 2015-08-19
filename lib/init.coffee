@@ -30,3 +30,29 @@ module.exports =
         fixer.fixReport(file, report)
       .then () =>
         buffer.setText file.content
+
+  provideLinter: ->
+    linter =
+      grammarScopes: ['source.sass']
+      scope: 'file'
+      lintOnFly: true
+      lint: (textEditor) ->
+        linter = new Linter
+        buffer = textEditor.getBuffer()
+        filePath = textEditor.getPath()
+        file = new File filePath, buffer.getText()
+        return new Promise (resolve, reject) ->
+          linter.lintFile(file)
+            .then (report) =>
+              result = []
+
+              for issue in report
+                lineLength = buffer.lineLengthForRow(issue.position.line - 1)
+                result.push {
+                  filePath: filePath,
+                  type: 'Warning',
+                  text: issue.error,
+                  range: [[issue.position.line - 1, 0], [issue.position.line - 1, lineLength]]
+                }
+
+              resolve result
