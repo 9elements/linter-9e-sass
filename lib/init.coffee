@@ -33,6 +33,7 @@ module.exports =
 
   provideLinter: ->
     linter =
+      name: '9e'
       grammarScopes: ['source.sass']
       scope: 'file'
       lintOnFly: true
