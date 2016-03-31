@@ -2,7 +2,7 @@
   "name": "linter-9e-sass",
   "main": "./lib/init",
   "activationCommands": [],
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Linter plugin for 9e-sass-lint",
   "repository": "https://github.com/9elements/linter-9e-sass.git",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "9e-sass-lint": "^0.0.12"
+    "9e-sass-lint": "^0.0.13"
   },
   "providedServices": {
     "linter": {
